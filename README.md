@@ -1,5 +1,5 @@
 # SpringBootSamples
 Spring Boot Samples
 
-* Spring boot Interceptors
+* Spring boot Interceptors (SampleInterceptor, LocaleChangeInterceptor..)
 * Spring boot Internationalization
