@@ -20,18 +20,34 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.5.6'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf:2.5.6'
 
     implementation 'org.webjars:bootstrap:4.2.1'
     implementation 'org.webjars:font-awesome:4.7.0'
 
-    compileOnly 'org.projectlombok:lombok'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    annotationProcessor 'org.projectlombok:lombok'
-    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    developmentOnly 'org.springframework.boot:spring-boot-devtools:2.5.6'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+    providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat:2.5.6'
 
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.5.6'
+
+    // Cucumber test framework
+
+    testImplementation 'io.cucumber:cucumber-java:7.0.0'
+    testImplementation 'io.cucumber:cucumber-junit:7.0.0'
+    testImplementation 'io.cucumber:cucumber-spring:7.0.0'
+
+    testImplementation 'org.junit.vintage:junit-vintage-engine:5.8.1'
+
+    implementation 'org.jsonurl:jsonurl-jsonorg:2.0.1'
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'mysql:mysql-connector-java'
+
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
 
 }
 

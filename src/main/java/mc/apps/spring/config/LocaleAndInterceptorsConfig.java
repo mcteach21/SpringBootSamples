@@ -1,4 +1,4 @@
-package mc.apps.spring;
+package mc.apps.spring.config;
 
 import mc.apps.spring.interceptors.SampleInterceptor;
 import org.apache.logging.log4j.LogManager;
@@ -15,11 +15,11 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import java.util.Locale;
 
 @Configuration
-public class WebConfig implements WebMvcConfigurer {
-    private static final Logger logger = LogManager.getLogger(WebConfig.class);
+public class LocaleAndInterceptorsConfig implements WebMvcConfigurer {
+    private static final Logger logger = LogManager.getLogger(LocaleAndInterceptorsConfig.class);
 
     private final SampleInterceptor sampleInterceptor;
-    public WebConfig(SampleInterceptor sampleInterceptor) {
+    public LocaleAndInterceptorsConfig(SampleInterceptor sampleInterceptor) {
         this.sampleInterceptor = sampleInterceptor;
     }
 
@@ -35,7 +35,6 @@ public class WebConfig implements WebMvcConfigurer {
         slr.setDefaultLocale(Locale.FRANCE);
         return slr;
     }
-
     /**
      * Locale Change Interceptor!
      * @return
@@ -63,14 +62,11 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        logger.info("addInterceptors..");
-        registry.addInterceptor(sampleInterceptor)
-//                .addPathPatterns("/**")
-                .excludePathPatterns("/webjars/**","/images/**","/css/**");
+//        logger.info("addInterceptors..");
+//        registry.addInterceptor(sampleInterceptor)
+//                .excludePathPatterns("/webjars/**","/images/**","/css/**");
 
         registry.addInterceptor(localeChangeInterceptor());
     }
-
-
 
 }
